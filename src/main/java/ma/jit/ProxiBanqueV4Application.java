@@ -8,7 +8,6 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import ma.jit.dao.IClientDao;
 import ma.jit.domaine.Client;
-import ma.jit.domaine.Personne;
 
 @SpringBootApplication
 public class ProxiBanqueV4Application implements CommandLineRunner {
