@@ -1,0 +1,48 @@
+<div class="input-group ">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Search" (input)="search($event.target.value)">
+ </div>
+ <h3 style="text-align: center; color:orange;;">Liste des comptes du client N°: {{client.id}} Nom: {{client.nom}} Prenom: {{client.prenom}}</h3><br>
+ <div class="container" >
+ <table class="table table-bordered">
+  <thead class="bg-info text-center">
+    <tr>
+      <th colspan="3" style="font-size: 1.5em;">Compte Courant</th>
+    </tr>
+    <tr>
+      <th scope="col">Numéro de compte</th>
+      <th scope="col">Solde</th>
+      <th scope="col">Decouvert</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center;">{{compteCourant.numeroCompte}}</td>
+      <td style="text-align: center;">{{compteCourant.solde}}</td>
+      <td style="text-align: center;">{{compteCourant.decouvert}}</td>
+      <td style="text-align: center;"><button class="btn btn-warning btn-sm btn-block" [routerLink]="['/virement' ,compteCourant.numeroCompte]">Virement</button></td>
+    </tr>
+  </tbody>
+ </table>
+ </div><br>
+ <div class="container"  *ngIf="listecomptes.length == 2">
+  <table class="table table-bordered">
+    <thead class="bg-info text-center">
+      <tr>
+        <th colspan="2" style="font-size: 1.5em;">Compte d'épargne</th>
+      </tr>
+      <tr>
+        <th scope="col">Numéro de compte</th>
+        <th scope="col">Solde</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center;">{{compteEpargne.numeroCompte}}</td>
+        <td style="text-align: center;">{{compteEpargne.solde}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
